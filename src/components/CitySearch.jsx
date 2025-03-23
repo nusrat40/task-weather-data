@@ -18,7 +18,7 @@ const CitySearch = ({ onAddCity }) => {
         value={city}
         onChange={(e) => setCity(e.target.value)}
       />
-      <button className="btn btn-primary" onClick={handleAddCity}>
+      <button className="btn bg-[#419dd6] text-white" onClick={handleAddCity}>
         Add City
       </button>
     </div>

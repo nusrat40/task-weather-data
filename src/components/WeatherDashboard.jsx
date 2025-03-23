@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import CitySearch from "./CitySearch";
 import WeatherCard from "./WeatherCard";
+import skyBg from '../assets/sky-sunset.jpg';
 
 const WeatherDashboard = () => {
   const [cities, setCities] = useState(() => {
@@ -29,9 +30,17 @@ const WeatherDashboard = () => {
   );
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-purple-50 p-6">
+    <div
+      className="min-h-screen p-6"
+      style={{
+        backgroundImage: `url(${skyBg})`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
+      }}
+    >
       <div className="max-w-7xl mx-auto">
-        <h1 className="text-4xl font-bold text-center text-gray-800 mb-8">
+        <h1 className="text-4xl font-bold text-center text-white mb-8">
           Weather Dashboard
         </h1>
         
@@ -50,7 +59,7 @@ const WeatherDashboard = () => {
         
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
           {filteredCities.length === 0 ? (
-            <p className="text-center text-gray-500 col-span-full">
+            <p className="text-center text-white col-span-full">
               {cities.length === 0 ? "No cities added." : "No matching cities found."}
             </p>
           ) : (

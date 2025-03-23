@@ -104,13 +104,13 @@ const WeatherCard = ({ city, onRemove }) => {
       </div>
       <div className="flex justify-between mt-6">
         <button
-          className="btn btn-error hover:bg-red-700 transition-colors duration-300"
+          className="btn btn-error text-white hover:bg-red-700 transition-colors duration-300"
           onClick={handleRemove}
         >
           Remove
         </button>
         <button
-          className="btn bg-[#808bff] transition-colors duration-300"
+          className="btn bg-[#419dd6] text-white transition-colors duration-300"
           onClick={toggleUnit}
         >
           Switch to {unit === "metric" ? "Fahrenheit" : "Celsius"}
