@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { FaSun, FaCloud, FaCloudRain, FaSnowflake, FaBolt } from "react-icons/fa";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const API_KEY = "1d807683083495a1385c78216ed002d7";
 
@@ -48,26 +50,74 @@ const WeatherCard = ({ city, onRemove }) => {
     }
   };
 
+  const handleRemove = () => {
+    toast.info(
+      <div>
+        <p>Are you sure you want to remove {city}?</p>
+        <div className="flex gap-2 mt-2">
+          <button
+            className="btn btn-sm btn-error"
+            onClick={() => {
+              onRemove(city);
+              toast.dismiss();
+            }}
+          >
+            Yes
+          </button>
+          <button
+            className="btn btn-sm btn-secondary"
+            onClick={() => toast.dismiss()}
+          >
+            No
+          </button>
+        </div>
+      </div>,
+      {
+        position: "top-center",
+        autoClose: false,
+        closeButton: false,
+        draggable: false,
+      }
+    );
+  };
+
   if (loading) return <p>Loading...</p>;
   if (error) return <p className="text-red-500">{error}</p>;
 
   return (
-    <div className="card bg-base-100 shadow-xl p-4">
-      <h2 className="text-xl font-bold">{weather.name}</h2>
-      <div className="flex items-center justify-center my-2">
+    <div className="card bg-base-100 shadow-xl p-6 transform transition-transform duration-300 hover:scale-105">
+      <h2 className="text-2xl font-bold text-gray-800 mb-4">{weather.name}</h2>
+      <div className="flex items-center justify-center my-4">
         {getWeatherIcon(weather.weather[0].main)}
       </div>
-      <p>Temperature: {weather.main.temp}°{unit === "metric" ? "C" : "F"}</p>
-      <p>Humidity: {weather.main.humidity}%</p>
-      <p>Wind Speed: {weather.wind.speed} {unit === "metric" ? "m/s" : "mph"}</p>
-      <div className="flex justify-between mt-4">
-        <button className="btn btn-error" onClick={() => onRemove(city)}>
+      <div className="space-y-2 text-gray-700">
+        <p>
+          <span className="font-semibold">Temperature:</span> {weather.main.temp}°
+          {unit === "metric" ? "C" : "F"}
+        </p>
+        <p>
+          <span className="font-semibold">Humidity:</span> {weather.main.humidity}%
+        </p>
+        <p>
+          <span className="font-semibold">Wind Speed:</span> {weather.wind.speed}{" "}
+          {unit === "metric" ? "m/s" : "mph"}
+        </p>
+      </div>
+      <div className="flex justify-between mt-6">
+        <button
+          className="btn btn-error hover:bg-red-700 transition-colors duration-300"
+          onClick={handleRemove}
+        >
           Remove
         </button>
-        <button className="btn btn-secondary" onClick={toggleUnit}>
+        <button
+          className="btn btn-secondary hover:bg-purple-700 transition-colors duration-300"
+          onClick={toggleUnit}
+        >
           Switch to {unit === "metric" ? "Fahrenheit" : "Celsius"}
         </button>
       </div>
+      <ToastContainer />
     </div>
   );
 };
