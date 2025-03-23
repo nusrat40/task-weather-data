@@ -2,6 +2,9 @@
 
 The **Weather Dashboard** is a React-based web application that provides real-time weather information for multiple cities. It offers an intuitive interface for tracking weather conditions, with features like adding/removing cities, toggling temperature units, and searching for specific locations. The app fetches real-time data from the **OpenWeatherMap API** and ensures a seamless user experience with a modern, responsive design.
 
+## Live Demo
+Check out the live website here: [Live Demo](https://it-nova-weather-dashboard.netlify.app/)
+
 ## 🚀 Features
 
 - **Add/Remove Cities**: Easily add or remove cities to track their weather.
