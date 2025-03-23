@@ -1,12 +1,22 @@
-# React + Vite
+# Weather Dashboard 🌤️
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+The **Weather Dashboard** is a React-based web application that provides real-time weather information for multiple cities. It offers an intuitive interface for tracking weather conditions, with features like adding/removing cities, toggling temperature units, and searching for specific locations. The app fetches real-time data from the **OpenWeatherMap API** and ensures a seamless user experience with a modern, responsive design.
 
-Currently, two official plugins are available:
+## 🚀 Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Add/Remove Cities**: Easily add or remove cities to track their weather.
+- **Temperature Unit Toggle**: Switch between **Celsius** and **Fahrenheit** for temperature display.
+- **Search Functionality**: Quickly search for cities to add to the dashboard.
+- **Weather Details**: Displays **temperature, humidity, wind speed,** and **weather conditions** with icons.
+- **Responsive Design**: Optimized for all devices with a clean and modern layout.
+- **Background Image**: Features a beautiful **sky sunset background** for an enhanced visual experience.
 
-## Expanding the ESLint configuration
+## 🛠️ Technologies Used
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- **React**: For building the user interface.
+- **OpenWeatherMap API**: For fetching real-time weather data.
+- **Tailwind CSS**: For styling and responsive design.
+- **React Icons**: For displaying weather condition icons.
+- **React Toastify**: For displaying confirmation toasts when removing cities.
+
+
