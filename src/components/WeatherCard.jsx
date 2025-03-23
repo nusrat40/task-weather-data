@@ -1,8 +1,7 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { FaSun, FaCloud, FaCloudRain, FaSnowflake, FaBolt } from "react-icons/fa";
-import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
+import { toast } from "react-toastify";
 
 const API_KEY = "1d807683083495a1385c78216ed002d7";
 
@@ -111,13 +110,12 @@ const WeatherCard = ({ city, onRemove }) => {
           Remove
         </button>
         <button
-          className="btn btn-secondary hover:bg-purple-700 transition-colors duration-300"
+          className="btn bg-[#808bff] transition-colors duration-300"
           onClick={toggleUnit}
         >
           Switch to {unit === "metric" ? "Fahrenheit" : "Celsius"}
         </button>
       </div>
-      <ToastContainer />
     </div>
   );
 };
